@@ -3,7 +3,7 @@ package org.factordev.poointerfaces.imprenta.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Curriculo extends Hoja{
+public class Curriculo extends Hoja implements Imprimible{
 
     private String persona;
     private String carrera;
@@ -33,5 +33,10 @@ public class Curriculo extends Hoja{
             sb.append("").append(exp).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public String imprimir() {
+        return "";
     }
 }

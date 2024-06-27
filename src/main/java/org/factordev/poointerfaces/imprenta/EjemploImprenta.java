@@ -1,8 +1,7 @@
 package org.factordev.poointerfaces.imprenta;
+import static org.factordev.poointerfaces.imprenta.modelo.Genero.*;
 
-import org.factordev.poointerfaces.imprenta.modelo.Curriculo;
-import org.factordev.poointerfaces.imprenta.modelo.Hoja;
-import org.factordev.poointerfaces.imprenta.modelo.Informe;
+import org.factordev.poointerfaces.imprenta.modelo.*;
 
 public class EjemploImprenta {
     public static void main(String[] args) {
@@ -13,12 +12,21 @@ public class EjemploImprenta {
         cv.addExperiencia("Desarrollador Full Stack");
         cv.addExperiencia("Angular");
 
+        Libro libro = new Libro("steve jobs", "patrones de disenio: Elem reusables", PROGRAMACION);
+
+        libro.addPagina(new Pagina("patron singleton"))
+                .addPagina(new Pagina("patron observer"))
+                .addPagina(new Pagina("patron factory"))
+                .addPagina(new Pagina("patron Composite"))
+                .addPagina(new Pagina("patron Facade"));
+
         Informe informe = new Informe("Bill Gates", "Jamez R", "Estudio sobre micoservicios");
-        imprimir(cv);
-        imprimir(informe);
+        Imprimir(cv);
+        Imprimir(informe);
+        Imprimir(libro);
     }
 
-    public static void imprimir(Hoja imprimible){
+    public static void Imprimir(Imprimible imprimible){
         System.out.println(imprimible.Imprimir());
     }
 }
