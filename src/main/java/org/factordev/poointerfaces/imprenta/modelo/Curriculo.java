@@ -9,7 +9,7 @@ public class Curriculo extends Hoja{
     private String carrera;
     private List<String> experiencias;
 
-    public Curriculo(String contenido, String persona, String carrera, List<String> experiencias) {
+    public Curriculo(String contenido, String persona, String carrera) {
         super(contenido);
         this.persona = persona;
         this.carrera = carrera;
